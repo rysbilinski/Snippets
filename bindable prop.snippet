@@ -45,19 +45,13 @@
             </Declarations>
             <Code Language="csharp">
                 <![CDATA[
-        public static readonly BindableProperty $PropertyName$Property = BindableProperty.Create(
-                                        propertyName: nameof($PropertyName$),
-                                        returnType: typeof($Type$),
-                                        declaringType: typeof(View),
-                                        defaultValue: $DefaultValue$,
-                                        defaultBindingMode: BindingMode.$BindingMode$,
-                                        propertyChanged: $PropertyChangedHandler$,
-                    propertyChanging: $PropertyChangingHandler$);
+        public static readonly BindableProperty $PropertyName$Property = 
+            BindableProperty.Create(nameof($PropertyName$), typeof($Type$), typeof(View), $DefaultValue$, BindingMode.$BindingMode$);
  
         public $Type$ $PropertyName$
         {
-            get { return ($Type$)GetValue($PropertyName$Property); }
-            set { SetValue($PropertyName$Property, value); }
+            get => ($Type$)GetValue($PropertyName$Property);
+            set => SetValue($PropertyName$Property, value);
         }
         $end$]]>
             </Code>
